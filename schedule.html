@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable Information</title>
+    <style>
+        body {
+            font-family: 'Lucida Console', Monaco, monospace;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: cyan;
+        }
+
+        .form-container {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 20px 80px rgba(0, 255, 255, 0.9); 
+            border: 2px solid cyan;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            margin-top: 50px;
+        }
+
+        .form-container h1 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: cyan;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .form-section {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            border: 1px solid cyan;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); 
+        }
+
+        .form-section h3 {
+            margin-bottom: 10px;
+            color: cyan;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            gap: 30px;
+            font-family: 'Arial', sans-serif;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.5); 
+        }
+
+        .form-row input, .form-row select {
+            padding: 8px 12px;
+            border: 1px solid cyan;
+            border-radius: 5px;
+            width: 48%;
+            background-color: black;
+            color: cyan;
+        }
+
+        .form-row input::placeholder {
+            color: cyan;
+        }
+
+        .form-row input:focus, .form-row select:focus {
+            border-color: cyan;
+            box-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.7);
+        }
+
+        form button {
+            padding: 10px;
+            width: 150px;
+            background-color: black;
+            color: cyan;
+            border: 1px solid cyan;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        form button:hover {
+            transform: scale(0.9);
+            background-color: cyan;
+            color: black;
+        }
+
+        .student-info {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid cyan;
+        }
+
+        table, th, td {
+            border: 1px solid cyan;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            background-color: black;
+            color: cyan;
+        }
+
+        th {
+            background-color: cyan;
+            color: black;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(0, 255, 255, 0.2);
+        }
+
+        tr:hover {
+            background-color: rgba(0, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Timetable Schedule</h1>
+        <form id="timetable-info-form">
+            <div class="form-section">
+                <h3>Subjects</h3>
+                <div id="subjects">
+                    <div class="form-row">
+                        <input type="text" name="subject-id-1" placeholder="Subject ID 1" required>
+                        <input type="text" name="subject-name-1" placeholder="Subject Name 1" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="subject-id-2" placeholder="Subject ID 2" required>
+                        <input type="text" name="subject-name-2" placeholder="Subject Name 2" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="subject-id-3" placeholder="Subject ID 3" required>
+                        <input type="text" name="subject-name-3" placeholder="Subject Name 3" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="subject-id-4" placeholder="Subject ID 4" required>
+                        <input type="text" name="subject-name-4" placeholder="Subject Name 4" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="subject-id-5" placeholder="Subject ID 5" required>
+                        <input type="text" name="subject-name-5" placeholder="Subject Name 5" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="subject-id-6" placeholder="Subject ID 6" required>
+                        <input type="text" name="subject-name-6" placeholder="Subject Name 6" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Teachers</h3>
+                <div id="teachers">
+                    <div class="form-row">
+                        <input type="text" name="teacher-id-1" placeholder="Teacher ID 1" required>
+                        <input type="text" name="teacher-name-1" placeholder="Teacher Name 1" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="teacher-id-2" placeholder="Teacher ID 2" required>
+                        <input type="text" name="teacher-name-2" placeholder="Teacher Name 2" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="teacher-id-3" placeholder="Teacher ID 3" required>
+                        <input type="text" name="teacher-name-3" placeholder="Teacher Name 3" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="teacher-id-4" placeholder="Teacher ID 4" required>
+                        <input type="text" name="teacher-name-4" placeholder="Teacher Name 4" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="teacher-id-5" placeholder="Teacher ID 5" required>
+                        <input type="text" name="teacher-name-5" placeholder="Teacher Name 5" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" name="teacher-id-6" placeholder="Teacher ID 6" required>
+                        <input type="text" name="teacher-name-6" placeholder="Teacher Name 6" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Class Sections</h3>
+                <select name="class-section" id="class-section" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="A">Class Section A</option>
+                    <option value="B">Class Section B</option>
+                    <option value="C">Class Section C</option>
+                </select>
+
+                <div id="student-info" class="student-info">
+                    Number of Students: <span id="student-count">66 students</span>
+                </div>
+            </div>
+             
+            <div class="form-section">
+                <h3>Timetable Constraints</h3>
+                <input type="text" name="class-duration" placeholder="Class Duration (e.g., 40 minutes)" required>
+                <input type="text" name="break-duration" value="15 minutes" readonly>
+                <input type="text" name="lunch-duration" value="40 minutes" readonly>
+            </div>
+            
+            <div class="form-section">
+                <h3>Scheduling Constraints</h3>
+                <div class="form-row">
+                    <input type="time" name="start-time" placeholder="Start Time" required>
+                    <input type="time" name="end-time" placeholder="End Time" required>
+                </div>
+                <input type="text" name="days-of-week" placeholder="Days of the Week (e.g., Monday to Friday)" required>
+            </div>
+            
+            <button type="submit">Generate Timetable</button>
+        </form>
+    </div>
+    <script>
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        const form = document.getElementById('timetable-info-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const formData = new FormData(form);
+
+            const subjects = [];
+            for (let i = 1; i <= 6; i++) {
+                subjects.push({
+                    id: formData.get(`subject-id-${i}`),
+                    name: formData.get(`subject-name-${i}`)
+                });
+            }
+
+            const classDuration = parseInt(formData.get('class-duration').split(' ')[0]);
+            const breakDuration = parseInt(formData.get('break-duration').split(' ')[0]);
+            const lunchDuration = parseInt(formData.get('lunch-duration').split(' ')[0]);
+            const startTime = formData.get('start-time');
+            const periodCount = 8; // Example number of periods
+
+            function addMinutes(time, minutes) {
+                const date = new Date();
+                const [hours, mins] = time.split(':').map(Number);
+                date.setHours(hours);
+                date.setMinutes(mins);
+                date.setMinutes(date.getMinutes() + minutes);
+                return date.toTimeString().slice(0, 5);
+            }
+
+            let currentTime = startTime;
+            const timetable = document.createElement('table');
+            const headerRow = document.createElement('tr');
+            const headers = ['Period', 'Time', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+            headers.forEach(headerText => {
+                const header = document.createElement('th');
+                header.textContent = headerText;
+                headerRow.appendChild(header);
+            });
+            timetable.appendChild(headerRow);
+
+            for (let i = 1; i <= periodCount; i++) {
+                const row = document.createElement('tr');
+                const periodCell = document.createElement('td');
+                periodCell.textContent = `Period ${i}`;
+                row.appendChild(periodCell);
+
+                const timeCell = document.createElement('td');
+                const periodStartTime = currentTime;
+                currentTime = addMinutes(currentTime, classDuration);
+                timeCell.textContent = `${periodStartTime} - ${currentTime}`;
+                row.appendChild(timeCell);
+
+                // Add break or lunch duration
+                if (i === 4) {
+                    const lunchRow = document.createElement('tr');
+                    const lunchPeriodCell = document.createElement('td');
+                    lunchPeriodCell.textContent = "Lunch Break";
+                    lunchRow.appendChild(lunchPeriodCell);
+
+                    const lunchTimeCell = document.createElement('td');
+                    const lunchStartTime = currentTime;
+                    currentTime = addMinutes(currentTime, lunchDuration);
+                    lunchTimeCell.textContent = `${lunchStartTime} - ${currentTime}`;
+                    lunchRow.appendChild(lunchTimeCell);
+
+                    for (let j = 2; j < headers.length; j++) {
+                        const cell = document.createElement('td');
+                        cell.textContent = "Lunch";
+                        lunchRow.appendChild(cell);
+                    }
+
+                    timetable.appendChild(lunchRow);
+                } else if (i === 2) {
+                    const breakRow = document.createElement('tr');
+                    const breakPeriodCell = document.createElement('td');
+                    breakPeriodCell.textContent = "Break";
+                    breakRow.appendChild(breakPeriodCell);
+
+                    const breakTimeCell = document.createElement('td');
+                    const breakStartTime = currentTime;
+                    currentTime = addMinutes(currentTime, breakDuration);
+                    breakTimeCell.textContent = `${breakStartTime} - ${currentTime}`;
+                    breakRow.appendChild(breakTimeCell);
+
+                    for (let j = 2; j < headers.length; j++) {
+                        const cell = document.createElement('td');
+                        cell.textContent = "Break";
+                        breakRow.appendChild(cell);
+                    }
+
+                    timetable.appendChild(breakRow);
+                }
+
+                for (let j = 2; j < headers.length; j++) {
+                    const cell = document.createElement('td');
+                    const shuffledSubjects = shuffleArray([...subjects]);
+                    const subjectIndex = (i - 1) % shuffledSubjects.length;
+                    cell.textContent = shuffledSubjects[subjectIndex].name; // Assign subject name based on index
+                    row.appendChild(cell);
+                }
+                timetable.appendChild(row);
+            }
+
+            document.body.appendChild(timetable);
+        });
+    </script>
+</body>
+</html>
